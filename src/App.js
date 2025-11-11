@@ -3,7 +3,7 @@ import './App.css';
 import TodoList from './components/TodoList';
 import Draggable from 'react-draggable';
 import AutoCompleteDropdown from './components/AutoCompleteDropdown';
-
+import { Button } from "@/components/ui/button";
 
 
 function App() {
@@ -19,7 +19,9 @@ function App() {
         </div>
        
       </Draggable>
-
+    <div className="p-10">
+      <Button>It works!</Button>
+    </div>
 
       {/* Second Todo List (College To-Do List, non-draggable) */}
       <div id="fixed">
