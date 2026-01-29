@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <div className="p-10 border-r-50"> 
-      <Button>It works!</Button>
+      
     </div>
       {/* First Todo List (Post-it note) */}
       <Draggable>
