@@ -3,31 +3,23 @@ import './App.css';
 import TodoList from './components/TodoList';
 import Draggable from 'react-draggable';
 import AutoCompleteDropdown from './components/AutoCompleteDropdown';
-import { Button } from "./components/ui/button";
-
 
 function App() {
-  
-
-  
   return (
     <div className="App">
-      <div className="p-10 border-r-50"> 
-      
-    </div>
       {/* First Todo List (Post-it note) */}
       <Draggable>
         <div>
-         
-         <TodoList title="To-Do List"  />
+
+          <TodoList title="To-Do List" />
         </div>
-       
+
       </Draggable>
-    
+
 
       {/* Second Todo List (College To-Do List, non-draggable) */}
       <div id="fixed">
-        <AutoCompleteDropdown title="College List" style="wide"/>
+        <AutoCompleteDropdown title="College List" className="wide" />
       </div>
     </div>
   );

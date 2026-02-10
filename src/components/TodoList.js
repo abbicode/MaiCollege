@@ -1,13 +1,9 @@
 import React, { useState } from 'react';
-import Draggable from 'react-draggable';
 import TodoItem from './TodoItem';
-import Autocomplete from '@mui/material/Autocomplete';
-import TextField from '@mui/material/TextField';
 
-function TodoList({title,style}) {
+function TodoList({ title, className }) {
   const [tasks, setTasks] = useState([]);
   const [text, setText] = useState('');
-  const collegeList = ['Brown', 'Dartmouth'];
 
   function addTask(text) {
     if (text === '') return;
@@ -52,7 +48,7 @@ function TodoList({title,style}) {
     const newTasks = [...tasks];
     const draggedTaskIndex = newTasks.findIndex(task => task.id === parseInt(draggedTaskId));
     const targetTaskIndex = newTasks.findIndex(task => task.id === id);
-    
+
     // Swap the tasks
     const [draggedTask] = newTasks.splice(draggedTaskIndex, 1);
     newTasks.splice(targetTaskIndex, 0, draggedTask);
@@ -66,7 +62,7 @@ function TodoList({title,style}) {
   }
 
   return (
-    <div className={`todo-list ${style}`}>
+    <div className={`todo-list ${className || ''}`}>
       <h1>{title}</h1>
 
       <div className="tasks-container">
@@ -93,7 +89,7 @@ function TodoList({title,style}) {
           placeholder="Add a new task"
         />
         <button className="add-task-button" onClick={() => addTask(text)}>Add</button>
-        
+
       </div>
     </div>
 
