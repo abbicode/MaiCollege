@@ -1,13 +1,12 @@
 
-
-const searchCollegeDatabase= async (collegeName, database) => {
+const searchCollegeDatabase = async (collegeName, database) => {
     // const results = await database.results;
-   
-    const foundSchool = database.results.find(result => result["school.name"] === collegeName);
+
+    const foundSchool = database.results.find(result => result["latest.school.name"] === collegeName);
     if (foundSchool) {
         return foundSchool;
     }
-    else{
+    else {
         return "School not found";
     }
 
