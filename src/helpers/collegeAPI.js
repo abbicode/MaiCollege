@@ -1,7 +1,7 @@
 const fetchCollegeData = async () => {
   const url = "https://api.data.gov/ed/collegescorecard/v1/schools";
   const apiKey = "vcWEZiScp9Sl90Iw278yRaqSScBRJtnvzbfxiH7y"; // Replace with your actual API key
-  const fields = "id,school,latest";
+  const fields = "id,latest.school.name,latest.school.school_url,latest.admissions.admission_rate.overall,latest.student.size,latest.cost.tuition.in_state,latest.cost.tuition.out_of_state,latest.admissions.sat_scores.average.overall,latest.admissions.sat_scores.25th_percentile.math,latest.admissions.sat_scores.25th_percentile.critical_reading";
   const perPage = 100; // Maximum allowed by the API
 
   try {
@@ -16,7 +16,8 @@ const fetchCollegeData = async () => {
     console.log(`Fetched ${data.results.length} colleges from page 0. Total available: ${data.metadata.total}`);
 
     // If there are more pages, fetch them all
-    const totalPages = Math.ceil(data.metadata.total / perPage);
+    // const totalPages = Math.ceil(data.metadata.total / perPage);
+    const totalPages = 5;
     const allResults = [...data.results];
 
     // Fetch remaining pages (limit to first 10 pages = 1000 schools to avoid long load times)
